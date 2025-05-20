@@ -3,7 +3,7 @@ TASK-3
 
 🔐 IoT Security System: Motion Detection + Image Capture + Mobile Alert
 
-This project is a smart security system prototype** built using the ESP32-CAM and a PIR motion sensor. 
+This project is a smart security system prototype built using the ESP32-CAM and a PIR motion sensor. 
 It detects motion, captures an image, and sends a real-time alert to the user's smartphone using the Blynk IoT app.
 
 
