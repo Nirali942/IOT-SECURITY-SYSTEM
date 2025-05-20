@@ -28,6 +28,7 @@ Jumper wires
 
 Optional: Breadboard, Relay module (for alarm/light), MicroSD card (to store images)
 
+
  💻 Software Requirements
 
 - [Arduino IDE](https://www.arduino.cc/en/software)
@@ -35,6 +36,7 @@ Optional: Breadboard, Relay module (for alarm/light), MicroSD card (to store ima
 - Blynk library (install via Library Manager)
 - Blynk IoT App (Android/iOS)
 - Internet Wi-Fi connection
+  
 
 ⚙️ System Workflow
 Motion Detection: PIR sensor detects movement.
@@ -44,6 +46,7 @@ Image Capture: ESP32-CAM captures an image when motion is detected.
 Alert Sent: An alert (with captured image or notification) is sent to the user’s mobile app using Blynk or Telegram.
 
 Optional: Activate a buzzer or light using relay.
+
 
 🔌 Circuit Connection
 ESP32-CAM Pin 	PIR Sensor
@@ -61,10 +64,14 @@ U0T → RX of FTDI
 
 IO0 → GND (only during upload)
 
+
+
 🔧 Arduino IDE Setup
 
 1. Install ESP32 board URL:
    https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+
+   
 
 📲 Blynk Setup
 Create a new project in Blynk.
@@ -74,6 +81,8 @@ Choose device: ESP32
 Add a Notification widget and enable event notification
 
 Use event named motion_alert in the code.
+
+
 
 📲 Blynk Setup (Mobile)
 
@@ -86,6 +95,8 @@ Use event named motion_alert in the code.
 5. Copy the **Auth Token** to use in the code.
 6. In the web dashboard, create an **Event** named 'motion_alert'.
 
+  
+
   🔑 Configuration
 
 In the Arduino code, replace the placeholders with your details:
@@ -93,6 +104,23 @@ In the Arduino code, replace the placeholders with your details:
 const char* ssid = "YOUR_WIFI_SSID";
 const char* password = "YOUR_WIFI_PASSWORD";
 char auth[] = "YOUR_BLYNK_AUTH_TOKEN";
+
+
+
+🧪 Testing
+Power the ESP32-CAM with 5V.
+
+Open your Blynk app.
+
+When motion is detected:
+
+A notification is sent.
+
+(Optional) Image capture is logged in the serial monitor.
+
+Add image upload via Telegram or SD card if needed.
+
+
 
 📦 Deliverables
 ✅ Fully working prototype with real-time alerts
